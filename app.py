@@ -6,12 +6,11 @@ from langchain.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 from langchain.document_loaders import PyMuPDFLoader
 from langchain.vectorstores.chroma import Chroma
-
-
-
+from dotenv import load_dotenv
 import os
+load_dotenv()
 
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = os.getenv("API_KEY")
 
 
 def process_pdf(pdf_file):
